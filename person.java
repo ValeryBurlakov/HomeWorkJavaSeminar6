@@ -1,4 +1,4 @@
-import java.util.Objects;
+// import java.util.Objects;
 
 public class person {
     String name;
@@ -29,9 +29,9 @@ public class person {
     
     @Override 
     public String toString() {
-        return "{" + "name='" + name + '\'' + " surname='" + surname + '\'' +
-                    ", age='" + age + '\'' + ", sex='" + sex + '\'' +'}';
-        // return String.format("name: %s %s age: %d sex: %s", name, surname, age, sex);
+        // return "{" + "name='" + name + '\'' + " surname='" + surname + '\'' +
+        //             ", age='" + age + '\'' + ", sex='" + sex + '\'' +'}';
+        return String.format("name: %s %s age: %d sex: %s", name, surname, age, sex);
     }
     // @Override
     // public int compareTo(person o)
