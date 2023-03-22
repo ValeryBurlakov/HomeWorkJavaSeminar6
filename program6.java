@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 // import java.util.Arrays;
@@ -6,10 +6,10 @@ import java.util.Comparator;
 // import java.util.Comparator;
 // import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+// import java.util.stream.Collectors;
 // import java.util.Map;
 // import java.util.jar.Attributes.Name;
-import java.util.stream.Stream;
+// import java.util.stream.Stream;
 
 public class program6 {
     public static void main(String[] args) {
@@ -33,17 +33,30 @@ public class program6 {
         System.out.println("сориторовка age по возрастанию");
         personData.stream()
                 .sorted(Comparator.comparing(person::getAge))
-                .collect(Collectors.toList())
+                // .collect(Collectors.toList())
                 .forEach(System.out::println);
-
+                System.out.println("=======================================");
         System.out.println("Больше 20 лет");
         personData.stream()
                 .filter(p -> (p.getAge() > 10))
                 .forEach(System.out::println);
-    }
-    // public static void test3() {
+                System.out.println("=======================================");
 
-    // }
+        System.out.println("только мужчины");
+        personData.stream()
+                .filter(p -> (p.getSex() == "male"))
+                .forEach(System.out::println);
+                System.out.println("=======================================");
+        System.out.println("Есть ли дети ?");
+        boolean isAllAgesGreaterThan6 = personData.stream()
+                .anyMatch(user -> user.getAge() < 18);
+                if (isAllAgesGreaterThan6 == true) {
+                    System.out.println("Дети есть");  
+                } else {
+                    System.out.println("Все взрослые");
+                }     
+                System.out.println("=======================================");             
+    }
 }
 
 
