@@ -33,17 +33,13 @@ public class person implements Comparable<person>{
     public String toString() {
         // return "{" + "name='" + name + '\'' + " surname='" + surname + '\'' +
         //             ", age='" + age + '\'' + ", sex='" + sex + '\'' +'}';
-        return String.format("name: %s %s age: %d sex: %s", name, surname, age, sex);
+        return String.format("name: %s %s, age: %d, sex: %s", name, surname, age, sex);
     }
 
-
-
-    // @Override
-    // public int compareTo(person o) {
-    //     return Comparator.comparing(person::getLastName)
-    //       .thenComparing(person::getFirstName)
-    //       .thenComparing(person::getBirthDate, Comparator.nullsLast(Comparator.naturalOrder()))
-    //       .compare(this, o);
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, sex);
+    }
 
     @Override
     public int compareTo(person o)
@@ -54,18 +50,6 @@ public class person implements Comparable<person>{
         return this.name.compareTo(o.getName());
     }
 
-    // @Override // станет true у equals в 9 строке
-    // public boolean equals(Object obj) {
-    //     if (obj == null) {
-    //         return false;
-    //     }
-    //     if (!(obj instanceof person)) { // проверка что обжект является котом
-    //         return false;
-    //     }
-
-    //     person anotherPerson = (person) obj;
-    //     return Objects.equals(name, anotherPerson.name) && age == anotherPerson.age;
-    // }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,5 +57,5 @@ public class person implements Comparable<person>{
         person that = (person) o;
         return name.equals(that.name) &&
         surname.equals(that.surname);
-}
+    }
 }
