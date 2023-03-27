@@ -70,7 +70,7 @@ public class program6 {
 
         HashSet<person> personNamesake = new HashSet<person>(personDuplicate);
         System.out.println("=======================================");
-        System.out.println("Список персонов у которых есть тёзка:\n" + personNamesake);
+        System.out.println("Список персонов у которых есть полный тёзка:\n" + personNamesake);
     }
 
         // Map<String, ArrayList<person>> persons = new HashMap<>();
