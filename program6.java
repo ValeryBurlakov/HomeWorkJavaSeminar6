@@ -27,7 +27,7 @@ public class program6 {
                 System.out.println("=======================================");
         System.out.println("Больше 20 лет");
         personData.stream()
-                .filter(p -> (p.getAge() > 10))
+                .filter(p -> (p.getAge() > 20))
                 .forEach(System.out::println);
                 System.out.println("=======================================");
 
@@ -53,14 +53,9 @@ public class program6 {
 
         for (int index = 0; index < personData.size(); index++) {
             int t = 1;
-            // System.out.println(personData.get(index));
-            // System.out.println(personData.get(index).hashCode());
             while (t < personData.size()) {
-                // System.out.println(personData.get(index).compareTo(personData.get(t)));
-                // System.out.print(index);
                 if (index == t) {
                     t++;
-                    // System.out.println("сравнивает сам с собой");
                 } else {
                     if (personData.get(index).hashCode() == personData.get(t).hashCode()) {
                         System.out.println(personData.get(index));
@@ -78,7 +73,6 @@ public class program6 {
         System.out.println("Список персонов у которых есть тёзка:\n" + personNamesake);
     }
 
-
         // Map<String, ArrayList<person>> persons = new HashMap<>();
         // Collections.addAll(personData,  new person("Ivan", "Sutkin", 23, "male"),  
         //                                 new person("asdad", "Sutkasdsdain", 23, "male"));
@@ -90,10 +84,6 @@ public class program6 {
 
         // personStream.filter(p-> p.getAge()>20).forEach(p->System.out.println("Имя " + p.getName() + " возраст " + p.getAge()));
 }
-
-
-
-
 
 // Создать класс Person.
 // У класса должны быть поля:
